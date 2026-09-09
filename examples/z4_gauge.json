@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "Z4 gauge theory",
+  "symbol_format": "functions",
+  "anyons": {
+    "type": "tuples",
+    "moduli": [
+      4,
+      4
+    ]
+  },
+  "vacuum": [
+    0,
+    0
+  ],
+  "fusion_rules": {
+    "expression": "1 if c == ((a[0] + b[0]) % 4, (a[1] + b[1]) % 4) else 0"
+  },
+  "quantum_dimensions": {
+    "expression": "1"
+  },
+  "topological_spins": {
+    "expression": "exp(2 * pi * 1j * a[0] * a[1] / 4)"
+  },
+  "F_symbols": {
+    "expression": "1"
+  },
+  "R_symbols": {
+    "expression": "exp(2 * pi * 1j * a[1] * b[0] / 4)"
+  },
+  "symmetry": {
+    "group": {
+      "gap": "Group((1,2,3,4),(2,4))",
+      "generator_names": [
+        "T",
+        "S"
+      ]
+    },
+    "rho": {
+      "generator_images": [
+        1,
+        0
+      ]
+    },
+    "action": {
+      "expression": "((a[1] if g == 'T' or g == 'S' else -a[0] if g == 'T*T' or g == 'S*T' else -a[1] if g == 'T*T*T' or g == 'T*T*S' else a[0]) % 4, (a[0] if g == 'S' or g == 'T*T*T' else -a[0] if g == 'T' or g == 'T*T*S' else -a[1] if g == 'T*T' or g == 'T*S' else a[1]) % 4)"
+    },
+    "U_symbols": {
+      "expression": "exp(2 * pi * 1j * a[1] * b[0] / 4) if g == 'T' or g == 'S' or g == 'T*T*T' or g == 'T*T*S' else 1"
+    },
+    "eta_symbols": {
+      "expression": "exp(2 * pi * 1j * a[0] * a[1] / 4) if (g == 'T' or g == 'S' or g == 'T*T*T' or g == 'T*T*S') and (h == 'T' or h == 'S' or h == 'T*T*T' or h == 'T*T*S') else 1"
+    }
+  }
+}

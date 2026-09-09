@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "U(1)_4 x U(1)_-4",
+  "symbol_format": "functions",
+  "anyons": {
+    "type": "tuples",
+    "moduli": [
+      4,
+      4
+    ]
+  },
+  "vacuum": [
+    0,
+    0
+  ],
+  "fusion_rules": {
+    "expression": "1 if c == ((a[0] + b[0]) % 4, (a[1] + b[1]) % 4) else 0"
+  },
+  "quantum_dimensions": {
+    "expression": "1"
+  },
+  "topological_spins": {
+    "expression": "exp(pi * 1j * (a[0] * a[0] - a[1] * a[1]) / 4)"
+  },
+  "F_symbols": {
+    "expression": "(-1) ** (a[0] * ((b[0] + c[0]) // 4) - a[1] * ((b[1] + c[1]) // 4))"
+  },
+  "R_symbols": {
+    "expression": "exp(pi * 1j * (a[0] * b[0] - a[1] * b[1]) / 4)"
+  },
+  "symmetry": {
+    "group": {
+      "gap": "Group((1,2,3,4),(2,4))",
+      "generator_names": [
+        "T",
+        "S"
+      ]
+    },
+    "rho": {
+      "generator_images": [
+        1,
+        1
+      ]
+    },
+    "action": {
+      "expression": "((a[1] if g == 'T' or g == 'S' else -a[0] if g == 'T*T' or g == 'S*T' else -a[1] if g == 'T*T*T' or g == 'T*T*S' else a[0]) % 4, (a[0] if g == 'S' or g == 'T*T*T' else -a[0] if g == 'T' or g == 'T*T*S' else -a[1] if g == 'T*T' or g == 'T*S' else a[1]) % 4)"
+    },
+    "U_symbols": {
+      "expression": "((-1) ** a[1] if b[1] != 0 else 1) if g == 'T' or g == 'T*S' else ((-1) ** a[0] if b[0] != 0 else 1) * ((-1) ** a[1] if b[1] != 0 else 1) if g == 'T*T' or g == 'T*T*S' else ((-1) ** a[0] if b[0] != 0 else 1) if g == 'T*T*T' or g == 'S*T' else 1"
+    },
+    "eta_symbols": {
+      "expression": "1"
+    }
+  }
+}

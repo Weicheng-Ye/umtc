@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "name": "Z2 gauge theory",
+  "symbol_format": "functions",
+  "anyons": {
+    "type": "tuples",
+    "moduli": [
+      2,
+      2
+    ]
+  },
+  "vacuum": [
+    0,
+    0
+  ],
+  "fusion_rules": {
+    "expression": "1 if c == ((a[0] + b[0]) % 2, (a[1] + b[1]) % 2) else 0"
+  },
+  "quantum_dimensions": {
+    "expression": "1"
+  },
+  "topological_spins": {
+    "expression": "exp(2 * pi * 1j * a[0] * a[1] / 2)"
+  },
+  "F_symbols": {
+    "expression": "1"
+  },
+  "R_symbols": {
+    "expression": "exp(2 * pi * 1j * a[1] * b[0] / 2)"
+  },
+  "symmetry": {
+    "group": {
+      "gap": "AbelianGroup([2,2])",
+      "generator_names": [
+        "S",
+        "T"
+      ]
+    },
+    "rho": {
+      "generator_images": [
+        0,
+        1
+      ]
+    },
+    "action": {
+      "expression": "(a[1], a[0]) if g == 'S' or g == 'T' else a"
+    },
+    "U_symbols": {
+      "expression": "(-1) ** (a[1] * b[0]) if g == 'S' or g == 'T' else 1"
+    },
+    "eta_symbols": {
+      "expression": "(-1) ** (a[0] * a[1]) if (g == 'S' or g == 'T') and (h == 'S' or h == 'T') else 1"
+    }
+  }
+}

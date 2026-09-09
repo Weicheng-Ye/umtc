@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "name": "U(1)_2",
+  "symbol_format": "functions",
+  "anyons": {
+    "type": "tuples",
+    "moduli": [
+      2
+    ]
+  },
+  "vacuum": [
+    0
+  ],
+  "fusion_rules": {
+    "expression": "1 if c == ((a[0] + b[0]) % 2,) else 0"
+  },
+  "quantum_dimensions": {
+    "expression": "1"
+  },
+  "topological_spins": {
+    "expression": "exp(pi * 1j * a[0] * a[0] / 2)"
+  },
+  "F_symbols": {
+    "expression": "(-1) ** (a[0] * ((b[0] + c[0]) // 2))"
+  },
+  "R_symbols": {
+    "expression": "exp(pi * 1j * a[0] * b[0] / 2)"
+  },
+  "symmetry": null
+}

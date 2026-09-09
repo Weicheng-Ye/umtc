@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "name": "U(1)_10",
+  "symbol_format": "functions",
+  "anyons": {
+    "type": "tuples",
+    "moduli": [
+      10
+    ]
+  },
+  "vacuum": [
+    0
+  ],
+  "fusion_rules": {
+    "expression": "1 if c == ((a[0] + b[0]) % 10,) else 0"
+  },
+  "quantum_dimensions": {
+    "expression": "1"
+  },
+  "topological_spins": {
+    "expression": "exp(pi * 1j * a[0] * a[0] / 10)"
+  },
+  "F_symbols": {
+    "expression": "(-1) ** (a[0] * ((b[0] + c[0]) // 10))"
+  },
+  "R_symbols": {
+    "expression": "exp(pi * 1j * a[0] * b[0] / 10)"
+  },
+  "symmetry": {
+    "group": {
+      "gap": "CyclicGroup(2)",
+      "generator_names": [
+        "C"
+      ]
+    },
+    "rho": {
+      "generator_images": [
+        0
+      ]
+    },
+    "action": {
+      "expression": "((-a[0]) % 10,) if g == 'C' else a"
+    },
+    "U_symbols": {
+      "expression": "(-1) ** a[0] if g == 'C' and b[0] > 0 else 1"
+    },
+    "eta_symbols": {
+      "expression": "1"
+    }
+  }
+}
