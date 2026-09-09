@@ -176,7 +176,7 @@ def all_examples() -> dict[str, dict]:
     from scripts.categories_su2 import build_su2_examples
 
     return {
-        "toric_code_z2_z2t.json": toric_code(),
+        "toric_code.json": toric_code(),
         "fibonacci.json": fibonacci(),
         **build_abelian_examples(),
         **build_ising_examples(),

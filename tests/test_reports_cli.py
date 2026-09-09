@@ -58,7 +58,7 @@ class ReportTests(unittest.TestCase):
         json.dumps(report.to_dict(), allow_nan=False)
 
     def test_invalid_group_is_exact_even_with_large_tolerance(self):
-        data = materialize_symbols(self.data("toric_code_z2_z2t"))
+        data = materialize_symbols(self.data("toric_code"))
         data["symmetry"]["multiplication_table"] = [["1"] * 4 for _ in range(4)]
         cat = UMTC.from_dict(data)
         self.assertFalse(check_symmetry(cat, atol=10))

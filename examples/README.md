@@ -11,7 +11,7 @@ The infinite families are represented by the parameter choices below.
 | --- | --- | --- |
 | U(1)₂N, N=1,…,5 | [u1_2](u1_2.json), [u1_4](u1_4.json), [u1_6](u1_6.json), [u1_8](u1_8.json), [u1_10](u1_10.json) | Trivial at N=1; unitary Z₂ charge conjugation otherwise |
 | Ising⁽ν⁾, all odd ν modulo 16 | [ν=1](ising_nu1.json), [ν=3](ising_nu3.json), [ν=5](ising_nu5.json), [ν=7](ising_nu7.json), [ν=9](ising_nu9.json), [ν=11](ising_nu11.json), [ν=13](ising_nu13.json), [ν=15](ising_nu15.json) | Trivial |
-| Toric code (Z₂ gauge theory) | [toric_code_z2_z2t](toric_code_z2_z2t.json), [z2_gauge](z2_gauge.json) | Z₂×Z₂ᵀ |
+| Toric code (Z₂ gauge theory) | [toric_code](toric_code.json), [z2_gauge](z2_gauge.json) | Z₂×Z₂ᵀ |
 | Zₙ gauge theory, n=3,4 | [z3_gauge](z3_gauge.json), [z4_gauge](z4_gauge.json) | Dihedral group of order eight |
 | U(1)₂N×U(1)₋₂N, N=1,2 | [double_semion](double_semion.json), [u1_4_x_u1_minus4](u1_4_x_u1_minus4.json) | Z₂ᵀ at N=1; dihedral group of order eight at N=2 |
 | SU(2)ₖ, k=1,2,3,4,6,−3 | [k=1](su2_k1.json), [k=2](su2_k2.json), [k=3](su2_k3.json), [k=4](su2_k4.json), [k=6](su2_k6.json), [k=−3](su2_k_minus3.json) | Unitary Z₂ at k=6; trivial for the other shipped levels |
@@ -42,7 +42,7 @@ file reverses chirality by conjugating R and the spins.
 Some entries describe equivalent UMTCs in different labels or gauges:
 SU(2)₁ is the semion category U(1)₂, SU(2)₂ is Ising⁽³⁾, and z2_gauge is the
 toric code. In particular, the new gauge-theory files follow the first paper's
-`R(a,b)=exp(2*pi*i*a_m*b_e/N)` convention; `toric_code_z2_z2t.json` uses
+`R(a,b)=exp(2*pi*i*a_m*b_e/N)` convention; `toric_code.json` uses
 `(-1)^(a_e*b_m)`. Both gauges satisfy the package's equations.
 
 ## Source normalization correction

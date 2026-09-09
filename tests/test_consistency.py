@@ -146,7 +146,7 @@ def gauge_toric(data, *, conjugate_antiunitary=True, inverse_action=True):
 
 def three_fermion_z3_data():
     """A four-anyon UMTC with an order-three permutation of its fermions."""
-    data = materialize_symbols(example_data("toric_code_z2_z2t.json"))
+    data = materialize_symbols(example_data("toric_code.json"))
     data["name"] = "Three-fermion UMTC with Z3 permutation symmetry"
     anyons = list(itertools.product(range(2), repeat=2))
     groups = ["1", "C", "C2"]
@@ -219,11 +219,11 @@ def multiplicity_two_data():
 
 class ConsistencyTests(unittest.TestCase):
     def setUp(self):
-        self.toric_data = materialize_symbols(example_data("toric_code_z2_z2t.json"))
+        self.toric_data = materialize_symbols(example_data("toric_code.json"))
         self.fibonacci_data = example_data("fibonacci.json")
 
     def test_complete_examples_satisfy_every_check(self):
-        for filename in ("toric_code_z2_z2t.json", "fibonacci.json"):
+        for filename in ("toric_code.json", "fibonacci.json"):
             category = UMTC.from_json(EXAMPLES / filename)
             for checker in (
                 check_fusion, check_unitarity, check_pentagon, check_hexagon,

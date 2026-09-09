@@ -73,7 +73,7 @@ class DataTests(unittest.TestCase):
             self.assertEqual(cat.N(expected, expected, expected), 1)
 
     def test_moduli_order_and_tuple_access(self):
-        path = Path(__file__).resolve().parents[1] / "examples" / "toric_code_z2_z2t.json"
+        path = Path(__file__).resolve().parents[1] / "examples" / "toric_code.json"
         cat = UMTC.from_json(path)
         self.assertEqual(cat.anyons, ((0, 0), (0, 1), (1, 0), (1, 1)))
         self.assertEqual(cat.N((1, 0), (0, 1), (1, 1)), 1)

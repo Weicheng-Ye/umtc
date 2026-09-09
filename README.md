@@ -45,7 +45,7 @@ python -m venv .venv
 source .venv/bin/activate
 python -m pip install -e .
 
-umtc-check examples/toric_code_z2_z2t.json
+umtc-check examples/toric_code.json
 umtc-check examples/fibonacci.json
 ```
 
@@ -62,7 +62,7 @@ PYTHONPATH=src python -m unittest discover -s tests -v
 ```python
 from umtc import load_json, check_pentagon, check_hexagon, check_symmetry
 
-tc = load_json("examples/toric_code_z2_z2t.json")
+tc = load_json("examples/toric_code.json")
 one, e, m, psi = (0, 0), (1, 0), (0, 1), (1, 1)
 
 assert tc.N(e, m, psi) == 1
@@ -102,7 +102,7 @@ To supply actual Python functions, use the same category data with
 import json
 from umtc import UMTC
 
-with open("examples/toric_code_z2_z2t.json") as handle:
+with open("examples/toric_code.json") as handle:
     data = json.load(handle)
 
 def F(a, b, c, d, e, f):
@@ -260,7 +260,7 @@ result is represented by `null` in this diagnostic export.
 
 ```sh
 umtc-check examples/fibonacci.json --checks pentagon hexagon --atol 1e-10
-umtc-check examples/toric_code_z2_z2t.json --json
+umtc-check examples/toric_code.json --json
 ```
 
 Exit codes are **0** for passing checks, **1** for failed equations, and **2** for
@@ -280,7 +280,7 @@ Toric code and Fibonacci are described below.
 
 ### Toric code with Z₂ × Z₂ᵀ
 
-[toric_code_z2_z2t.json](examples/toric_code_z2_z2t.json) uses integer tuples
+[toric_code.json](examples/toric_code.json) uses integer tuples
 `a=(x,y)`, with fusion given by componentwise addition modulo two:
 
 | Label | Anyon | Quantum dimension | Twist |

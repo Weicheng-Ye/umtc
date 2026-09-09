@@ -281,6 +281,6 @@ eta values must have unit magnitude.
 
 The action need not be faithful: distinct elements can induce the same anyon
 permutation. For example, X and T in
-[the toric-code file](../examples/toric_code_z2_z2t.json) both exchange e and m,
+[the toric-code file](../examples/toric_code.json) both exchange e and m,
 but only T is antiunitary. GAP validates the group and grading at loading;
 the consistency checks verify the anyon action and symbols as well.
